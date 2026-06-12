@@ -36,18 +36,14 @@ go to any question say for now assignment1_pkg --> assignment1_pkg --> (navigate
 
 ## 3. VS Code edits:
 
-add the codes in vs code or using the nano command in terminal. then edit setup.py
+add the codes in vs code or using the nano command in terminal. then edit setup.py 
+navigate to folder name -> foldername with the same name -> setup.py -> last parah under entry_points
 to register Python scripts as executable nodes, you must add the mapping 
-
-```bash
-`'executable_name = package_name.script_file_name:main'` 
-inside the `console_scripts` array of each package's `setup.py` file.
-```
-
-This is done because ROS 2 requires an explicit entry point to bind your source code to the terminal environment, allowing the underlying discovery system to recognize and call your custom execution loops during a `ros2 run` command.
-
+and inside the `console_scripts` array of each package's `setup.py` file.
 the format is :
 ```bash
 "test_node = my_robot_controller.my_first_node:main"
 in the format: executable_name = package_name.file_name:main'
 ```
+This is done because ROS 2 requires an explicit entry point to bind your source code to the terminal environment, allowing the underlying discovery system to recognize and call your custom execution loops during a `ros2 run` command.
+
