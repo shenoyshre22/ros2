@@ -27,3 +27,27 @@ source install/setup.bash
 ros2 run (folder name)(file name)
 eg: ros2 run q1_pkg listener
 
+```
+##  2. How to Navigate to the folders for code:
+
+```bash
+go to any question say for now assignment1_pkg --> assignment1_pkg --> (navigate to any given file) listener.py / publisher_one.py etc
+```
+
+## 3. VS Code edits:
+
+add the codes in vs code or using the nano command in terminal. then edit setup.py
+to register Python scripts as executable nodes, you must add the mapping 
+
+```bash
+`'executable_name = package_name.script_file_name:main'` 
+inside the `console_scripts` array of each package's `setup.py` file.
+```
+
+This is done because ROS 2 requires an explicit entry point to bind your source code to the terminal environment, allowing the underlying discovery system to recognize and call your custom execution loops during a `ros2 run` command.
+
+the format is :
+```bash
+"test_node = my_robot_controller.my_first_node:main"
+in the format: executable_name = package_name.file_name:main'
+```
