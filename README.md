@@ -18,12 +18,12 @@ rm -rf build/ install/ log/
 # Compile all local source subdirectory packages
 colcon build
 # but if you want to compile just one file then:
-olcon build --packages-select (packagename)
+colcon build --packages-select (packagename)
 
 # Source the workspace configuration to map active packages to your environment
 source install/setup.bash
 
 # To run any file 
-ros2 run (folder name) (file name)
+ros2 run (folder name)(file name)
 eg: ros2 run q1_pkg listener
 
